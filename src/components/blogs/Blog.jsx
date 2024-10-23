@@ -1,6 +1,8 @@
 import React from "react";
+import { CiBookmarkPlus } from "react-icons/ci";
 
-const Blog = ({ blog }) => {
+
+const Blog = ({ blog, handlebookmark }) => {
   const {
     cover_img,
     title,
@@ -34,7 +36,15 @@ const Blog = ({ blog }) => {
               </div>
             </div>
             <div>
-                <h2 className="text-[20px] text-gray-500 font-[500]">{reading_time}</h2>
+              <h2 className="text-[20px] text-gray-500 font-[500]">
+                {reading_time}{" "}
+                <button
+                  onClick={()=>{handlebookmark(blog)}}
+                  className="btn btn-circle text-red-600 text-xl font-bold"
+                >
+                  <CiBookmarkPlus />
+                </button>{" "}
+              </h2>
             </div>
           </div>
           <div>
