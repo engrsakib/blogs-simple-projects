@@ -2,7 +2,7 @@ import React from "react";
 import { CiBookmarkPlus } from "react-icons/ci";
 
 
-const Blog = ({ blog, handlebookmark }) => {
+const Blog = ({ blog, handlebookmark, handleTime }) => {
   const {
     cover_img,
     title,
@@ -11,6 +11,7 @@ const Blog = ({ blog, handlebookmark }) => {
     author_img,
     hashTah,
     posted_date,
+    id
   } = blog;
   return (
     <div className="m-5">
@@ -37,9 +38,11 @@ const Blog = ({ blog, handlebookmark }) => {
             </div>
             <div>
               <h2 className="text-[20px] text-gray-500 font-[500]">
-                {reading_time}{" "}
+                {reading_time} Min{" "}
                 <button
-                  onClick={()=>{handlebookmark(blog)}}
+                  onClick={() => {
+                    handlebookmark(blog);
+                  }}
                   className="btn btn-circle text-red-600 text-xl font-bold"
                 >
                   <CiBookmarkPlus />
@@ -52,7 +55,7 @@ const Blog = ({ blog, handlebookmark }) => {
           </div>
           <div className="card-actions justify-end">
             <p className="text-[20px] font-[500] text-gray-400">{hashTah}</p>
-            <button className="btn text-primary">Mark as read</button>
+            <button onClick={() =>{handleTime(reading_time, id)}} className="btn text-primary">Mark as read</button>
           </div>
         </div>
       </div>
