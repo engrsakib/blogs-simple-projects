@@ -1,9 +1,10 @@
 import React from 'react';
+import profile from '../../../knowledge-cafe/images/boy1.png'
 
 const Header = () => {
     return (
       <div>
-        <div className="navbar bg-base-100">
+        <div className="navbar bg-base-100 border-b-2">
           <div className="flex-1">
             <a className="btn btn-ghost text-xl">Sakib Knawladge cafe</a>
           </div>
@@ -24,7 +25,7 @@ const Header = () => {
                 <div className="w-10 rounded-full">
                   <img
                     alt="Tailwind CSS Navbar component"
-                    src="../../../knowledge-cafe/images/boy1.png"
+                    src={profile}
                   />
                 </div>
               </div>
